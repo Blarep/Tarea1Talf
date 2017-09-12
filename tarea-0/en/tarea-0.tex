@@ -1,0 +1,61 @@
+\documentclass[spanish, fleqn]{article}
+\usepackage{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage[colorlinks, urlcolor=blue]{hyperref}
+\usepackage{fourier}
+\usepackage[top = 2.5cm, bottom = 2cm, left = 2cm, right = 2cm]{geometry}
+
+\newcommand{\num}{0}
+
+\title{Informática Teórica\\
+       Tarea \#\num \\
+       ``¡Precalentamiento!''}
+\author{Language Warriors}
+\date{4 de septiembre de 2017}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\section*{Preguntas}
+
+  Analice los patrones de búsqueda que ofrece el programa \texttt{grep(1)}
+  propio de Unix.
+  Usando éstas,
+  escriba
+  (¡y pruebe!)
+  patrones para las siguientes.
+  Note que \texttt{grep(1)} busca el patrón dado en la línea,
+  y retorna la línea si el patrón calza en alguna parte.
+  Aproveche las abreviaturas para escribir expresiones
+  lo más cortas posibles:
+  \begin{enumerate}
+  \item
+    Palabras que tienen una 'a', entre \(3\) y \(7\) 'b' seguidas por 'c'
+  \item
+    Líneas que comienzan con una letra mayúscula
+  \item
+    Líneas que terminan en '.',
+    posiblemente seguidas por espacios
+  \item
+    Contiene 'a' seguido por una o varias 'b' o 'c',
+    terminando en 'd'
+  \item
+    Contiene 'a' seguido por una o varias veces 'ab', terminando en 'd'
+  \end{enumerate}
+  Debe entregar para cada una de las anteriores el patrón
+  como se escribe en la línea de comandos
+  (en \LaTeX{} puede serle útil el comando \verb!\verb+...+!
+   para escribir texto con caracteres que tienen significado especial),
+  junto con una \emph{breve} explicación.
+
+\input{condiciones}
+  \vfill\hfill LW/HvB/\LaTeXe
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
