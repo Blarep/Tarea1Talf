@@ -12,7 +12,7 @@
 \title{Informática Teórica\\
        Tarea \#\num \\
        ``¡Precalentamiento!''}
-\author{Language Warriors}
+\author{Andrés Navarro \\ 201673001-K}
 \date{4 de septiembre de 2017}
 
 \begin{document}
@@ -36,23 +36,44 @@
     Palabras que tienen una 'a', entre \(3\) y \(7\) 'b' seguidas por 'c'
   \item
     Líneas que comienzan con una letra mayúscula
+    
+    \verb+grep '^[A-Z]'+
+    
+    Para que comiencen con una letra mayúscula basta con poner un \verb+^+ antes de nuestro conjunto para declarar que buscamos cualquier letra mayúscula entre la A y la Z al inicio de la línea.
+    
   \item
     Líneas que terminan en '.',
     posiblemente seguidas por espacios
+    
+    \verb+grep '\.[ ]*$'+
+    
+    Primero se escribe lo que queremos poner al final de la línea, como queremos un punto debemos ocupar '\verb+\+'  ya que el punto es un meta cáracter, luego, como pueden aparecer cero o más espacios ocupamos  '*'  para declarar que puede aparecer cero o más veces, finalmente usamos '\$' para declarar que lo anterior queremos que aparezca al final de la línea.
+  
   \item
     Contiene 'a' seguido por una o varias 'b' o 'c',
     terminando en 'd'
+    
+    \text{ grep -E '.*a[b|c]+.*d\$'}
+    
+    Pueden haber cero o más letras antes de la 'a' por lo que usamos '.*', luego de esta usamos [b|c] para elegir entre ambas letras seguido de un '+' ya que este indica que lo anterior aparecerá una o más veces. Luego pueden venir más letras '.*' y finalmente una 'd' seguida de un '\$' para declarar que es lo último que debe aparecer.
+    
+    Usamos '-E' para declarar que es una expresión regular, ya que grep por si solo no incluye algunas funciones (como '+').
   \item
     Contiene 'a' seguido por una o varias veces 'ab', terminando en 'd'
+    
+    \text{grep -E '.*a(ab)+.*d\$'}
+    
+    Primero pueden haber varios caracteres '.*', después aparecerá la 'a', seguida de esta declaramos que debe aparecer (ab) una o más veces con '+', luego pueden haber más caracteres por lo que escribimos '.*'. Finalmente escribimos 'd\$' indicando que esta es la última letra que queremos que aparezca.
+    Usamos '-E' para declarar que es una expresión regular para ocupar elementos como '()' y '+'.
   \end{enumerate}
+  
+  
   Debe entregar para cada una de las anteriores el patrón
   como se escribe en la línea de comandos
   (en \LaTeX{} puede serle útil el comando \verb!\verb+...+!
    para escribir texto con caracteres que tienen significado especial),
   junto con una \emph{breve} explicación.
 
-\input{condiciones}
-  \vfill\hfill LW/HvB/\LaTeXe
 \end{document}
 
 %%% Local Variables:
